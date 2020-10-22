@@ -17,8 +17,8 @@ function getConnection():PDO{
     $credentials = getCredentials();
     $db_username = $credentials['username'];
     $db_password=$credentials['password'];
-    $db_name='webshop';
-    $db_server="localhost:".$credentials['port'];
+    $db_name=$credentials['database'];
+    $db_server=$credentials['server'];
 
     return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
 }
